@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="theApp">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body ng-controller="ControlRoom">
+  <div class="">
+    <input type="text" name="" value="" ng-model="searchTerm" placeholder="Search Quotes"></br>
+    </br>
+    <input type="text" name="" value="" ng-model="newQuote" placeholder="New Quote">
+    <input type="text" name="" value="" ng-model="newAuthor" placeholder="Author">
+    <button type="button" name="button" ng-click="addQuote(newQuote,newAuthor)">Submit Quote</button>
+  </div>
+  <div class="quote" ng-repeat="quote in quotes|filter:searchTerm track by $index">
+    <quote class="quote-text">"{{quote.text}}"</quote>
+
+      <quote class="quote-author">{{quote.author}}</quote>
+      <p class="x-button" ng-click="deleteQuote($index)">X</p>
+  </div>
+
+
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+<script src="app.js">
+</script>
+<script src="controol.js">
+</script>
+<script src="service.js">
+</script>
+
+
+</html>
